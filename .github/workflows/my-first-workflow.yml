@@ -13,4 +13,5 @@ jobs:
       - run: |
           write-output "yay 🎉"
         shell: pwsh
-      - uses: jessehouwing-actions/hello-world-docker@main
+      - uses: jessehouwing-actions/hello-world-docker@v1
+      - uses: jessehouwing-actions/hello-world-docker@v1.0.0
