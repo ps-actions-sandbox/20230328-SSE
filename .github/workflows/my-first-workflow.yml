@@ -24,7 +24,7 @@ jobs:
           path: ./dist/
           
   deploy-staging:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, amd]
     environment: staging
     needs: build
     
