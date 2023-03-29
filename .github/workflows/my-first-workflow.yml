@@ -13,7 +13,7 @@ jobs:
       - run: |
           write-output "yay 🎉"
           mkdir -force dist |out-null
-          "stuff" >> ./dist/deploymentpackage.zip
+          "stuff" > ./dist/deploymentpackage.zip
         shell: pwsh
       - uses: jessehouwing-actions/hello-world-docker@v1
       - uses: jessehouwing-actions/hello-world-docker@v1.0.0
