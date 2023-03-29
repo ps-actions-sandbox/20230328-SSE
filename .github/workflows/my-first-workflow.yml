@@ -12,7 +12,7 @@ jobs:
         name: Checkout the latest version
       - run: |
           write-output "yay 🎉"
-          mkdir -force dist |out-null
+          mkdir dist
           "stuff" > ./dist/deploymentpackage.zip
         shell: pwsh
       - uses: jessehouwing-actions/hello-world-docker@v1
