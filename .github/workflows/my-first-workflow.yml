@@ -12,6 +12,24 @@ jobs:
         name: Checkout the latest version
       - run: |
           write-output "yay 🎉"
+          mkdir -force dist |out-null
+          "stuff" >> ./dist/deploymentpackage.zip
         shell: pwsh
       - uses: jessehouwing-actions/hello-world-docker@v1
       - uses: jessehouwing-actions/hello-world-docker@v1.0.0
+      - name: Upload a Build Artifact
+      - uses: actions/upload-artifact@v3.1.2
+        with:
+          name: deployment-atrifact
+          path: ./dist/
+          
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    needs: build
+    
+    steps:
+      - uses: actions/download-artifact@2
+      - run: |
+          write-output "Done!"
+        shell: pwsh
